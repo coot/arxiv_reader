@@ -4,8 +4,8 @@ ARXIV READER FOR MUTT
 This is a python script to nicely present [arxiv](http://arxiv.org/) news feed.
 I use it together with the mutt email reader.  It is written using the ncurses
 library :).  It highlights titles whihc are written by ``${ARXIV_AUTHORS}`` or
-ones that matches a pattern.  It can also fetch abstract, pdf file from the
-web page or just open the link in your ``${BROWSER}``.
+ones that matches a pattern.  It can also fetch abstracts, pdfs or just open
+the link in your ``${BROWSER}``.
 
 Configuration
 -------------
@@ -18,10 +18,11 @@ macro index,pager X "<pipe-message>arxiv_reader.py<enter>Wo" "parse message thro
 Then when you are over email fro arxiv type X and the scritp will parse the
 email and list all the titles.
 
-You should also set the $BROWSER environment variable, $PDFREADER.  Or just
-change the BROWSER and PDFREADER variables in the script directly.  You should
-also change the DOWNLOADDIR variable.  By default it is set to
-``$HOME/downloads`` and if does not exist it is reset to ``/tmp``.
+You should also set the ``$BROWSER`` environment variable, ``$PDFREADER``.  Or
+just change the ``$BROWSER`` and ``$PDFREADER`` variables in the script
+directly.  You should also change the ``$DOWNLOADDIR`` variable.  By default
+it is set to ``$HOME/downloads`` and if does not exist it is reset to
+``/tmp``.
 
 How to
 ------
