@@ -35,6 +35,8 @@ database: with ``s``, or delete it with ``d`` (sqlite3 database placed in
 ``$HOME/.arxiv.db``).  The ``g`` key will get/download the most recent version
 of the paper and ``O`` will open the file in ``$PDFREADER``.
 
+Press ``q`` to close the abstract window or quit the reader.
+
 If you define ``$ARXIV_AUTHORS`` environment variable titles of matching authors
 will be highlighted. ``$ARXIV_AUTHORS`` is a white space separated list of names.
 
