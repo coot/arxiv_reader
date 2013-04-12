@@ -3,7 +3,9 @@ ARXIV READER FOR MUTT
 
 This is a python script to nicely present [arxiv](http://arxiv.org/) news feed.
 I use it together with the mutt email reader.  It is written using the ncurses
-library :).
+library :).  It highlights titles whihc are written by ``${ARXIV_AUTHORS}`` or
+ones that matches a pattern.  It can also fetch abstract, pdf file from the
+web page or just open the link in your ``${BROWSER}``.
 
 Configuration
 -------------
@@ -24,10 +26,17 @@ also change the DOWNLOADDIR variable.  By default it is set to
 How to
 ------
 
-Go up and down with ``j`` and ``k`` keys (all arrows).  Hit ``enter`` (or
-``<space>``, or ``a``) to see the abstract.  If it was not included in the
+Go up and down with ``j`` and ``k`` keys (or the arrow keys).  Hit ``enter``
+(or ``<space>``, or ``a``) to read the abstract.  If it was not included in the
 email it will be downloaded from the arxiv web page.  If you hit ``u`` the
 paper's url will be opened using your $BROWSER.  You can also save an entry to
-database: with ``s``, or delete it with ``d``.  The ``g`` key will
-get/download the most recent version of the paper and ``O`` will open the file
-in $PDFREADER.
+database: with ``s``, or delete it with ``d`` (sqlite3 database placed in 
+``$HOME/.arxiv.db``).  The ``g`` key will get/download the most recent version
+of the paper and ``O`` will open the file in $PDFREADER.
+
+If you define ``${ARXIV_AUTHORS}`` environment variable titles of matching authors
+will be highlighted. ``${ARXIV_AUTHORS}`` is a white space separated list of names.
+
+It also hightlights the title if ``${ARXIV_ABSTRACT_PATTERN}`` match the title or
+the abstract.  ``${ARXIV_ABSTRACT_PATTERN}`` is a Python pattern (can be written
+like r"" litterals).
